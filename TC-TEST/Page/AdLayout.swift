@@ -34,6 +34,7 @@ struct AdLayout {
         )
         switch layout {
         case "home":
+
             // MARK: Create the Info Ad
             let paidPostItem = ContentItem(id: "20220121", image: "", headline: "", lead: "", type: "ad", preferSponsorImage: "", tag: "", customLink: "", timeStamp: 0, section: 0, row: 0)
             
@@ -78,13 +79,7 @@ struct AdLayout {
             // MARK: - Break up the first section into two or more, depending on how you want to layout ads
             newContentSections = Content.updateSectionRowIndex(newContentSections)
             return newContentSections
-        case "OutOfBox-No-Ad":
-            if newContentSections[0].items.count > 0 {
-                newContentSections[0].items[0].isCover = true
-            }
-            newContentSections = Content.updateSectionRowIndex(newContentSections)
-            return newContentSections
-        case "Video", "OutOfBox", "OutOfBox-LifeStyle":
+        case "Video", "OutOfBox", "OurOfBox-LifeStyle":
             if newContentSections[0].items.count > 0 {
                 newContentSections[0].items[0].isCover = true
             }
@@ -106,6 +101,7 @@ struct AdLayout {
     }
     
     static func insertFullScreenAd(to items: [ContentItem], for index: Int)->(contentItems: [ContentItem], pageIndex: Int){
+        
         var newItems = items
         var newPageIndex = index
         var insertionPointAfter = index + 2

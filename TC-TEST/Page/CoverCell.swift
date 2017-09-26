@@ -86,13 +86,8 @@ class CoverCell: CustomCell {
             //print ("should load image here")
         }
         
-        let itemType = itemCell?.type
-        let caudio = itemCell?.caudio ?? ""
-        let eaudio = itemCell?.eaudio ?? ""
-        let audioFileUrl = itemCell?.audioFileUrl ?? ""
-        
         if let image = UIImage(named: "VideoPlayOverlay"),
-            itemType == "video" || caudio != "" || eaudio != "" || audioFileUrl != "",
+            itemCell?.type == "video",
             let cellWidth = cellWidth {
             let overlayWidth = max(cellWidth * 0.15, 20)
             self.addConstraint(NSLayoutConstraint(item: overlayImage, attribute: NSLayoutAttribute.height, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: NSLayoutAttribute.notAnAttribute, multiplier: 1, constant: overlayWidth))

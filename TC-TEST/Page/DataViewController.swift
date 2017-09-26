@@ -649,7 +649,7 @@ class DataViewController: UICollectionViewController, UINavigationControllerDele
             reuseIdentifier = "BigImageCell"
         } else if layoutStrategy == "Video" {
             reuseIdentifier = "VideoCoverCell"
-        } else if layoutStrategy?.hasPrefix("OutOfBox") == true {
+        } else if layoutStrategy == "OutOfBox" {
             reuseIdentifier = "OutOfBoxCoverCell"
         } else {
             let horizontalClass = UIScreen.main.traitCollection.horizontalSizeClass
