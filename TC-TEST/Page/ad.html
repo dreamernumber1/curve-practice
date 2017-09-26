@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+            <title>Ad 1</title>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            
+            <!-- MARK: Important: Need to add Google Analytics load events manually -->
+            <script>
+                {google-analytics-js}
+                </script>
+            <script>
+                ga('create', 'UA-1608715-1', 'auto');
+                ga('require', 'displayfeatures');
+                </script>
+            <!-- End Google Analytics -->
+            <style type="text/css">
+                *{margin:0 auto;padding: 0;}
+                html, body{
+                    background: #F6E9D8;
+                    margin:0 auto;
+                    width:{adbodywidth};
+                    height:100%;
+                    overflow:hidden;
+                    position: relative;
+                }
+            </style>
+    </head>
+    <body>
+        <script>
+        {ad-code-from-server}
+        try {
+            ga('send', 'event', 'Ad Impression', c.substring(0,4), c.substring(4,8), {'nonInteraction':1});
+        } catch (ignore) {
+            
+        }
+        document.documentElement.style.backgroundColor = "#FFF1E0";
+        document.body.style.backgroundColor = "#FFF1E0";
+        </script>
+    </body>
+</html>
